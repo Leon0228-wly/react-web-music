@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+1.1. 项目简介
+使用React编写的云音乐PC Web项目，接口来源于开源的接口，自己已经做了部署。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+项目已经完成功能如下：（你可以下载下来自己体验一下）
 
-## Available Scripts
+推荐页面：
+![页面截图](src/assets/img/推荐页.png)
 
-In the project directory, you can run:
+目前做了榜单中歌曲的点击播放；
+其他页面只要将歌曲的id传入到redux中就可以，整个逻辑已经打通；
+做了歌曲的各种控制（暂停、播放、上一首、下一首、进度改变）；
+做了播放循序切换：顺序播放、随机播放、单曲循环；
+歌曲播放
+![页面截图](src/assets/img/推荐页2.png)
 
-### `npm start`
+1.2. 项目规范
+项目规范：项目中有一些开发规范和代码风格
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.文件夹、文件名称统一小写、多个单词以连接符（-）连接；
+2.JavaScript变量名称采用小驼峰标识，常量全部使用大写字母，组件采用大驼峰；
+3.CSS采用普通CSS和styled-component结合来编写（全局采用普通CSS、局部采用styled-component）;
+4.整个项目不再使用class组件，统一使用函数式组件，并且全面使用Hooks；
+5.所有的函数式组件，为了避免不必要的渲染，全部使用memo进行包裹；
+6.组件内部的状态，使用useState、useReducer；业务数据全部放在redux中管理；
+7.函数组件内部按照如下顺序编写代码：
+组件内部state管理；
+redux的hooks代码；
+其他组件hooks代码；
+其他逻辑代码；
+返回JSX代码；
+8.redux代码规范如下：
+redux结合ImmutableJS
+每个模块有自己独立的reducer，通过combineReducer进行合并；
+异步请求代码使用redux-thunk，并且写在actionCreators中；
+redux直接采用redux hooks方式编写，不再使用connect；
+9.网络请求采用axios
+对axios进行二次封装；
+所有的模块请求会放到一个请求文件中单独管理；
+10.项目使用AntDesign
+项目中某些AntDesign中的组件是直接使用；
+1.3. 项目运行
+clone项目：
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+git clone https://github.com/Leon0228-wly/react-web-music.git
+安装项目依赖：
 
-### `npm test`
+yarn install
+项目运行：
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+yarn start
