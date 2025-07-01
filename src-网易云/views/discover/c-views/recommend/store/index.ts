@@ -24,6 +24,9 @@ export const fetchPlayListDetailAction = createAsyncThunk('playlist/detail',asyn
     .map((item)=>item.playlist)
     dispatch(changePlayListDetailAction(playlist))
   })
+  .catch((error)=>{
+    alert("发生错误:"+error)
+  })
 })
 export const fetchRecommendDataAction = createAsyncThunk(
   '/fetchdata',

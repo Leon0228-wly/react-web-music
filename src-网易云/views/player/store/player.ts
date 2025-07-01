@@ -71,6 +71,7 @@ interface IPlayerState {
   songList:any[]
   songIndex:number
   playMode:number
+
 }
 const initialState:IPlayerState = {
   currentSong:{},

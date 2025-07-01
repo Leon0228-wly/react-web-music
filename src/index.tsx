@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import './assets/css/index.less'
-import 'normalize.css'
 import store from './store'
 import App from '@/App'
 
@@ -18,4 +16,3 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-

@@ -3,13 +3,10 @@ import { configureStore } from '@reduxjs/toolkit'
 import {useSelector, useDispatch,TypedUseSelectorHook, shallowEqual} from 'react-redux'
 
 import counterReducer from './modules/counter'
-import recommendreducer from '@/views/discover/c-views/recommend/store'
-import playerReducer from "@/views/player/store/player"
+
 const store = configureStore({
   reducer:{
-    counter: counterReducer,
-    recommend: recommendreducer,
-    player:playerReducer
+    counter: counterReducer
   }
 })
 type GetStateFnType = typeof store.getState
